@@ -1,0 +1,56 @@
+1. 깃이란? -> 버전관리 도구
+
+git 특징 및 장점
+
+1) 빠른속도
+2) 분산형 저장소 지원 (여러 명이 동시에 수정하는 환경에 적합)
+3) 비선형적인 개발 (수천 개의 동시 다발적인 branch)
+4) 완벽한 분산
+5) 리눅스 커널 같은 대형 프로젝트에도 유용함 (속도나 데이터 크기 면에서)
+
+
+2. GIT 실습
+
+git 설치 후 가장 먼저 해주어야 할 설정
+user.name
+user.email
+: 커밋시 author, committer 의 메타데이터로 사용
+
+$ git config --global suer.name "YOUR NAME"
+$ git config --global suer.name "YOUR EMAIL"
+
+기존 프로젝트를 관리하고 싶을 때
+$ git init 
+새로운 디렉토리를 생성하여 git 저장소를 만들 때
+$ git init (directory path)
+
+
+3. 용어 정리
+
+Git directory
+.git 프로젝트의 프로젝트의 메타데이터와 객체 데이터베이스를 저장하는 곳
+
+Working directory
+프로젝트의 특정 버전을 checkout한 영역
+
+Staging area (index)
+저장할 파일들에 대한 정보를 담고있는 파일
+	내가 저장하고 싶은 파일들만 올리는 것
+
+Git 파일 관리 3단계
+Woring directory 수정 -> staging area git add -> commit해서 영구적인 스냅샷을 올림
+
+현재 working directory 상태 확인
+$ git status
+
+staging area로 올리기
+$ git add /file path /file name
+$ git add README.md
+
+4. 파일 커밋하기
+
+간단한 메시지를 남기며 커밋
+$ git commit -m "simple message"
+자세히 남기기
+$ git commit 
+(message 입력 후) esc -> wq -> enter
