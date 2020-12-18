@@ -95,3 +95,24 @@ $ git merge (target_branch_name)
 
 주의할 점 
 코드가 반영될 branch에서 실행해야한다.
+
+$git checkout fix/readme
+$ vi README.md
+$ git add README.md
+$ git commit -m "fix README.md"
+$ git checkout master
+$ git merge fix/readme
+
+fast-forward merge?
+"현재 branch (수정된 코드가 반영될 branch)의 커밋이 변경이 일어난 branch(merge를 하려는 branch)의 base commit과 동일한 경우
+
+fast-forward merge가 안 되는 경우 -> 3-way merge
+- 두 branch간 공통의 parent commit을 이용하여 순차적으로 merge를 수행
+- merge의 결과를 별도의 commit object로 저장
+- 코드가 반영된 branch가 바라보는 commit을 새로 만들어진 commit으로 변경
+- 이때 만들어진 commit을 merge commit이라고 함
+
+3-way merge 실습 시나리오
+- deview cfs 사이트를 만든다
+- 이미 만들어 두었던 cfs branch에서 작업 후 master branch로 merge
+- merge 된 cfs branch는 삭제
