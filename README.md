@@ -64,3 +64,34 @@ $ git diff (commitA) .. (commitB)
 
 index와 HEAD를 비교
 $ git diff --staged
+
+5. git log
+$ git log
+
+6. git branch
+branch 목록 확인
+$ git branch 
+branch 만들기
+$ git branch
+branch 삭제하기
+$ git branch -d (branch_name)
+-d는 merge된 branch만 삭제 -> 안전 장치가 있다?
+-D는 그냥 생으로 branch 삭제
+새로운 branch를 만들고 그 branch 로 변경
+$ git checkout -b (branch_name)
+
+실습
+$ git branch fix/readme --> git branch 생성
+$ git checkout fix/readme --> branch 이동
+$ git checkout -b cfs
+
+branch를 변경하면 일어나느 일들
+- index와 working directory의 파일들이 변경된 branch를 기준으로 switching
+- HEAD가 가리키는 branch가 변경됨
+
+git merge
+merge 하기
+$ git merge (target_branch_name)
+
+주의할 점 
+코드가 반영될 branch에서 실행해야한다.
