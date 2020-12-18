@@ -54,3 +54,13 @@ $ git commit -m "simple message"
 자세히 남기기
 $ git commit 
 (message 입력 후) esc -> wq -> enter
+
+5. git diff
+working directory 와 index를 비교
+$ git diff
+
+커밋 간 차이점을 비교
+$ git diff (commitA) .. (commitB)
+
+index와 HEAD를 비교
+$ git diff --staged
