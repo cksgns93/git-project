@@ -171,4 +171,22 @@ remote 저장소에 추가된 object들을 local로 받아오면서 merge까지 
 fetch + merge
 $ git pull origin master : 현재 작업중인 branch에 merge
 
+remote 변경 사항 받아고기 실습
+$ cd git-project2
+$ 수정
+$ git add README.md
+$ git commit -m "readme.md 수정"
+$ git push origin master
+$ cd ../git-project
+$ git pull origin master
+
+
+pull request
+1.프로젝트 내에서 branch를 따거나
+2.fork한 프로젝트에서 branch를 따서 개발한 기능을
+3. 원래 저장소에 merge 시켜달라고 요청하는 것
+4. 원래 저장소 관리자가 요청자의 commit에 대한 comment를 통해 review하거나 reject 할 수 있다.
+
+
+
 
