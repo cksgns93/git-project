@@ -149,3 +149,26 @@ $ git remote set-url (remote alias) (new remote url)
 원격 저장소 목록 확인
 $ git remote -v 
 
+이미 존재하는 저장소 받아오기
+git clone
+- 이미 프로젝트가 진행되고 있어 remote repository가 존재하는 경우
+- 새로운 개발장비에 개발 환경을 세팅 해야하는 겨웅
+- 현재 작업중인 directory 외에 프로젝트를 복사 하고 싶은 경우 등등
+
+remote 저장소를 local에 clone 하기
+$ git clone (remote_url) [directory name] -b [branch name]
+생략시 remote repository명으로 만들어 짐, 생략시 default branch로 받아옴
+
+원격저장소 변경내용 가져오기
+git fetch, git pull
+
+fetch
+remote 저장소에 추가된 object들을 받아와서 local에 저장
+$ git fetch (remote) (remote branch)
+
+pull
+remote 저장소에 추가된 object들을 local로 받아오면서 merge까지 수행
+fetch + merge
+$ git pull origin master : 현재 작업중인 branch에 merge
+
+
