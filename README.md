@@ -182,11 +182,35 @@ $ git pull origin master
 
 
 pull request
-1.프로젝트 내에서 branch를 따거나
-2.fork한 프로젝트에서 branch를 따서 개발한 기능을
+1. 프로젝트 내에서 branch를 따거나
+2. fork한 프로젝트에서 branch를 따서 개발한 기능을
 3. 원래 저장소에 merge 시켜달라고 요청하는 것
 4. 원래 저장소 관리자가 요청자의 commit에 대한 comment를 통해 review하거나 reject 할 수 있다.
 
 
+.gitignore
+git에 포함 안 시킬 파일들 정리하기
+https://www.toptal.com/developers/gitignore
 
+이미 push 했다
+1. .classpath나 bin같은 올릴 필요없는 파일까지 이미 올렸다
+2. 뒤늦게 .gitignore 추가해도 올라간 파일들은 지워지지 않는다.
 
+git rm --cached
+$ git rm -r --cached some-directory
+$ git commit -m "필요없는 파일 삭제"
+$ git push origin master
+
+non-fast-forward push 거부 해결
+git push -f 옵션으로 강제로 remote branch가 변경 된 경우
+
+직전 커밋 변경하기
+$ git commit --amend
+
+커밋 되돌리기
+working tree를 유지하며 되돌리기 (--mixed)
+$ git reset <commit>
+working tree, index(staging area) 유지하며 되돌리기
+$ git reset --soft <commit>
+working tree, index 모두
+$ git reset --hard <commit>
