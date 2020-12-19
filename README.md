@@ -116,3 +116,36 @@ fast-forward merge가 안 되는 경우 -> 3-way merge
 - deview cfs 사이트를 만든다
 - 이미 만들어 두었던 cfs branch에서 작업 후 master branch로 merge
 - merge 된 cfs branch는 삭제
+내가 작업을 했는데 아무도 추가를 하지 않으면 그대로 들어감
+$ git checkout cfs
+$ git add
+$ git commit -m "add cfs hello.html"
+$ git checkout master
+$ git merge cfs
+$ git branch -d cfs
+
+branch 합치기 다른 방법
+git rebase
+- 지정한 base를 기준으로 현재 branch의 base commit을 변경
+- 내부적으로는 base commit 을 기준으로 현재 branch 에서 추가된 변경을 하나씩 적용
+- merge 와 log history자체가 변경 되기 때문에 호불호가 많이 갈리는 기능
+
+git rebase는 한 줄로 commit을 관리할 수 있다.
+
+git rebase시 주의점
+- base commit을 기준으로 커밋을 새롭게 만들기 때문에 상당한 conflict 상황이 발생 가능
+- 작업 history가 유지 되지 않게 되므로 작업 이력이 중요한 경우에는 적절하지 않음
+- 개념을 잘 이해하지 못하고 사용하게 되면 더욱 큰 고통에 시달리게 됨
+
+git remote 명령어
+원격 저장소 추가
+$ git remote add (remote alias) (remote url)
+원격 저장소 상세정보 확인
+$ git remote show (remote alias)
+원격 저장소 alias 변경
+$ git remote rename (old_name) (new_name)
+원격 저장소 url 변경
+$ git remote set-url (remote alias) (new remote url)
+원격 저장소 목록 확인
+$ git remote -v 
+
